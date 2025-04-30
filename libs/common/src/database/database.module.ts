@@ -10,6 +10,7 @@ import { ConfigModule } from '../config/config.module';
       imports: [ConfigModule],
       useFactory: (configService: ConfigService) => ({
         uri: configService.get('MONGODB_URI'),
+        dbName: 'sleepr-db',
       }),
       inject: [ConfigService],
     }),
